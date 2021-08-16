@@ -1,0 +1,31 @@
+.card{
+	width: 30%;
+	margin-left: 2%
+}
+.form{
+	margin-top: 15%;
+}	
+ .form{
+ 	border-width: 50px;
+ 	display: block;
+    margin-left: 370px;
+    margin-right: 370px; }
+ .mycontainer{
+ 	border-width: 50px;
+ 	display: block;
+    margin-left: 370px;
+    margin-right: 370px;
+ }
+ .sel{
+ 	margin-top: 5px; 
+ }
+ p.dline{
+ 	line-height: 1.5;
+
+ }
+ .myform{
+ 	border-width: 50px;
+ 	display: block;
+    margin-left: 370px;
+    margin-right: 370px;
+ }
