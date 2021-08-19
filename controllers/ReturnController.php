@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once ROOT . '/models/User.php';
 class ReturnController{
 	public function actionReturn()
@@ -6,30 +6,24 @@ class ReturnController{
         $login = '';
         $password = '';
        if(isset($_POST['button']))
-       	   { $login = $_POST['login'];
+       	   {
+					 	$login = $_POST['login'];
             $password = $_POST['password'];
-             $userId= User:: getUserid($login);
-              User::auth($userId);
-                
+            $userId= User:: getUserid($login);
+            User::auth($userId);
+
               if ($userId==3) {
-           header("Location:/application/");
-                 
+           			header("Location:/application/");
                 exit;
               }
               else if (!$userId) {
-               header("Location:/register/"); # code...
+               header("Location:/register/");
               }
-              else   {
-          
-           header("Location:/user/"); 
+              else{
+               header("Location:/user/");
            }}
-  require_once(ROOT . '/views/return/return.php');
-
+  			 require_once(ROOT . '/views/return/return.php');
         return true;
-
         }
-        
 
-        
-    
 }

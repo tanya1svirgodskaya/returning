@@ -3,22 +3,15 @@ include_once ROOT . '/components/Db.php';
 class User
 {
 
-    /**
-     * Returns an array of categories
-     */
+    
     public static function getUserid($login)
     {
 
         $db = Db::getConnection();
-
-        
         $sql = 'SELECT id_user FROM user WHERE login = :login ';
-
         $result = $db->prepare($sql);
         $result->bindParam(':login', $login, PDO::PARAM_STR,30);
-        
         $result->execute();
-
         $user = $result->fetch();
         if ($user) {
             return $user['id_user'];
@@ -38,9 +31,7 @@ public static function checkLogged()
             return $_SESSION['user'];
         }
         else{return 'noooo';}
-        /*else{
-         header("Location: /return/login/");
-        }*/
+
 
 
 }

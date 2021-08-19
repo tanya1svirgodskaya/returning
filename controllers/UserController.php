@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once ROOT . '/models/Products.php';
 include_once ROOT . '/models/User.php';
 include_once ROOT . '/models/Order.php';
@@ -6,8 +6,8 @@ include_once ROOT . '/models/Return.php';
 class UserController{
 
 	public function actionProfile(){
-		
-			
+
+
 		require_once (ROOT.'/views/user/profile.php');
 		return true;
 	}
@@ -19,7 +19,7 @@ class UserController{
 		$psc=Order::getuserpsc($us);
 		//$psc=implode(',', $psc);
 		//$psc = explode(",", $psc);
-		//$psc=array_walk($psc, 'intval'); 
+		//$psc=array_walk($psc, 'intval');
 		$products=array();
 		$products=Psc::getpscbyid($psc);
 		$o=array();
@@ -27,12 +27,11 @@ class UserController{
 		require_once (ROOT.'/views/user/bought.php');
 		return true;
 	}
-	
+
 	public function actionFormreturn($or_am_id){
 		$m=$or_am_id;
 		/*$us=User::checkLogged();
  		$psc= array();
- 		
  		$orders= Order::getuserorders($us);
 		$psc=Order::getuserpsc($us);
 		$products=array();
@@ -41,16 +40,15 @@ class UserController{
 		$order= Order::getformdata($or_am_id);
 		if(isset($_POST['button']))
 		{$amount=$_POST['amount'];
-		
 		$clothe_state ['tags']=$_POST['tags'];
 		$clothe_state ['wearing']=$_POST['wearing'];
 		$clothe_state ['defects']=$_POST['defects'];
 		$reason=$_POST['reason'];
-		
+
 		Returns::insertreturn($order ,$amount,$clothe_state,$reason);
 				header('Location: /bought/');
 			}
-					
+
 		require_once (ROOT.'/views/user/formreturn.php');
 		return true;
 	}
@@ -82,20 +80,20 @@ public function actionMessage(){
 		//require_once (ROOT.'/views/user/condition.php');
 		return true;
 	}
-	
+
 	public function actionNocondition(){
 		if (isset($_POST['no']))
 			{$return=$_POST['no'];
 		 Returns::change_states($return,10);
 			 header('Location: /messages/');}
-		
-		
+
+
 		//require_once (ROOT.'/views/user/condition.php');
 		return true;
 	}
 	public function actionMyreturn()
 	{$products=array();
-		
+
 		$psc=array();
 		$us=User::checkLogged();
 		$returns=array();
@@ -106,8 +104,8 @@ public function actionMessage(){
 		return true;
 	}
 	public function actionRegister(){
-		
-			
+
+
 		require_once (ROOT.'/views/return/register.php');
 		return true;
 	}

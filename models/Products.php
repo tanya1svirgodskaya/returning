@@ -28,7 +28,7 @@ class Products
     }
 
 }
- 
+
 class Psc
 {
 
@@ -39,16 +39,12 @@ class Psc
     {
 
         $db = Db::getConnection();
-
         $productList = array();
          //$ids=int($ids);
-        
         $i = 0;
-       $sql = "SELECT psc.psc_id, psc.size,c.color_name,pr.id_product,pr.product_name  FROM product as pr  join prod_size_color as psc on pr.id_product= psc.id_product  join color as c on psc.id_color=c.id_color where psc.psc_id in (".implode(',', $ids).")";
-
-        $result = $db->prepare($sql);
-        
-        
+       $sql = "SELECT psc.psc_id, psc.size,c.color_name,pr.id_product,pr.product_name
+       FROM product as pr  join prod_size_color as psc on pr.id_product= psc.id_product  join color as c on psc.id_color=c.id_color where psc.psc_id in (".implode(',', $ids).")";
+        $result = $db->prepare($sql);    
         $result->execute();
         while ($row = $result->fetch()) {
 

@@ -6,14 +6,13 @@ return array('register'=> 'user/register',
 	'new/([0-9]+)'=>'admin/new/$1',
 	'user/condition'=>'user/condition',
 	'user/nocondition'=>'user/nocondition',
-	'user/product/([0-9]+)' => 'user/formreturn/$1', // actionView в ProductController
-	'admin/app/([0-9]+)' => 'admin/formapp/$1', // actionView в ProductController
+	'user/product/([0-9]+)' => 'user/formreturn/$1',
+	'admin/app/([0-9]+)' => 'admin/formapp/$1', // 
 	'return'=>'return/return',
 	'return/login'=>'return/login',
 	'user'=>'user/profile',
 	'bought'=>'user/bought',
 	'application'=>'admin/application',
 	'messages'=>'user/message',
-	
 	''=>'site/index',
 );
